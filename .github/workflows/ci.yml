@@ -26,3 +26,10 @@ jobs:
 
       # - name: Run tests
       #   run: php bin/phpunit
+
+      - name: Setup test database
+        env:
+          DATABASE_URL: mysql://symfony:symfony@127.0.0.1:3306/symfony_test
+        run: |
+          php bin/console doctrine:migrations:migrate --no-interaction
+          php bin/console doctrine:fixtures:load --no-interaction --env=test
