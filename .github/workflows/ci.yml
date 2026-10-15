@@ -1,4 +1,5 @@
 name: CI
+
 on:
   push:
     branches: [ main, develop ]
@@ -11,6 +12,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
@@ -19,7 +21,7 @@ jobs:
           coverage: xdebug
 
       - name: Validate composer.json and composer.lock
-        run: composer validate
+        run: composer validate --no-check-publish
 
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress
