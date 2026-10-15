@@ -50,7 +50,7 @@ jobs:
         env:
           DATABASE_URL: mysql://symfony:symfony@127.0.0.1:3306/symfony_test
         run: |
-          php bin/phpunit --coverage-text --coverage-clover=coverage.xml
+          php bin/phpunit --coverage-text --coverage-clover=coverage.xml -vvv
       
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
