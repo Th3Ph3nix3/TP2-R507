@@ -1,4 +1,6 @@
 {
+    "name": "Th3Ph3nix3/TP2-R507",
+    "description": "Réalisation du TP2 de mise en place de CLI",
     "type": "project",
     "license": "proprietary",
     "minimum-stability": "dev",
